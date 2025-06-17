@@ -1,9 +1,9 @@
 package DSA.LinkedList;
 
+import java.util.Stack;
 
-public class ReveseLinkedList {
-   static class Node
-    {
+public class ReverseListUsingStack {
+    static class Node {
         int data;
         Node next;
 
@@ -12,20 +12,25 @@ public class ReveseLinkedList {
             this.next = null;
         }
     }
-    public static Node reverseList(Node head)
-    {
-        Node curr=head;
-        Node prev=null;
-        Node forward;
-        while(curr!=null)
-        {
-            forward=curr.next;
-            curr.next=prev;
-            prev=curr;
-            curr=forward;
 
+    public static Node ReverseList(Node head) {
+        Stack<Node> s = new Stack<>();
+        Node curr = head;
+
+        while (curr != null) {
+            s.push(curr);
+            curr = curr.next;
         }
-        return prev;
+        head = s.pop();
+        curr = head;
+
+        while (!s.isEmpty()) {
+            curr.next = s.pop();
+            curr = curr.next;
+        }
+        curr.next = null;
+
+        return head;
     }
 
     public static void printList(Node head) {
@@ -36,6 +41,7 @@ public class ReveseLinkedList {
         }
         System.out.println("null");
     }
+
     public static void main(String[] args) {
         Node head = new Node(10);
         head.next = new Node(20);
@@ -45,7 +51,7 @@ public class ReveseLinkedList {
         System.out.println("Original Linked List:");
         printList(head);
 
-        head = reverseList(head);
+        head = ReverseList(head);
 
         System.out.println("Reversed Linked List:");
         printList(head);
