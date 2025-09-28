@@ -3,7 +3,7 @@ package DSA.LinkedList;
 import java.util.Stack;
 
 public class ReverseListUsingStack {
-    static class Node {
+  public   static class Node {
         int data;
         Node next;
 

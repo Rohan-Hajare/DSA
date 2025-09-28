@@ -1,5 +1,5 @@
 package DSA;
-
+// changes added here
 // Find peak element from mountain array
 //Examples of mountain array
 // [2,3,5,7,4,1,0] here peak elements is 7

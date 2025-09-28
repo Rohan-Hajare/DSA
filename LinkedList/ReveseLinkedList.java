@@ -23,7 +23,6 @@ public class ReveseLinkedList {
             curr.next=prev;
             prev=curr;
             curr=forward;
-
         }
         return prev;
     }
